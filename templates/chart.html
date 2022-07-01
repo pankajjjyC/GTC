@@ -1,0 +1,22 @@
+
+{% block content %}
+<form action="/chart" method="post">
+{%csrf_token%}
+<label for="">Upload Csv File</label><br>
+<input type="file" name="csv" id="csv" placeholder="Submit your file here">
+<button type="submit"> Submit</button>
+</form>   
+
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+  </li>
+  <li class="nav-item">
+  <a href="/secure">List of Blocks</a>
+  </li> <br>
+
+<br>
+{{ chart_heat|safe }} <br>
+
+
+
+{% endblock content %}
